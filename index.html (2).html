@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GambleFun</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://i.imgur.com/xJqT4CE.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.75);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        button {
+            margin: 10px;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #e91e63;
+            color: white;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #ad1457;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="question1">
+        <h2>Исполнилось ли тебе 18 лет?</h2>
+        <button onclick="handleAge(true)">Да</button>
+        <button onclick="exitApp()">Нет</button>
+    </div>
+
+    <div class="card" id="question2" style="display:none;">
+        <h2>Готов ли ты к развлечению?</h2>
+        <button onclick="showStart()">Да</button>
+        <button onclick="exitApp()">Нет</button>
+    </div>
+
+    <div class="card" id="startButton" style="display:none;">
+        <h2>Жми Старт и наслаждайся!</h2>
+        <a href="https://glamourqueenfire.live/Sd6vtWDUrS">
+            <button>Start</button>
+        </a>
+    </div>
+
+    <script>
+        function handleAge(isOfAge) {
+            if (isOfAge) {
+                document.getElementById('question1').style.display = 'none';
+                document.getElementById('question2').style.display = 'block';
+            } else {
+                exitApp();
+            }
+        }
+
+        function showStart() {
+            document.getElementById('question2').style.display = 'none';
+            document.getElementById('startButton').style.display = 'block';
+        }
+
+        function exitApp() {
+            window.close(); // or Telegram.WebApp.close() if inside Telegram
+        }
+    </script>
+</body>
+</html>
